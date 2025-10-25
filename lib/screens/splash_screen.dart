@@ -9,17 +9,18 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-    @override
+  @override
   void initState() {
     super.initState();
 
-    // Sau 3 giây sẽ tự chuyển sang màn hình Home
-    Future.delayed(const Duration(seconds: 3), () {
+    // Sau 4 giây sẽ tự chuyển sang màn hình Home
+    Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
-        context.go('/home'); // điều hướng sang route '/home'
+        context.go('/loginorsignup');
       }
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
             Image.asset("assets/images/LogoFlashNote.png", height: 200),
             Text(
               "Flash Note",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 30),
+              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35),
             ),
           ],
         ),

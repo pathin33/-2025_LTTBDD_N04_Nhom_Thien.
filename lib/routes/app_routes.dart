@@ -1,4 +1,7 @@
 import 'package:btl_moblie/screens/home_screen.dart';
+import 'package:btl_moblie/screens/login_or_signup_screen.dart';
+import 'package:btl_moblie/screens/login_screen.dart';
+import 'package:btl_moblie/screens/sign_up_screen.dart';
 import 'package:btl_moblie/screens/splash_screen.dart';
 // import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -8,12 +11,28 @@ final GoRouter appRouter = GoRouter(
     GoRoute(
       path: '/',
       name: 'splashScreen',
-      builder: (context, state) => const SplashScreen()
+      builder: (context, state) => const SplashScreen(),
+    ),
+    GoRoute(
+      path: '/loginorsignup',
+      name: 'loginOrSignup',
+      builder: (context, state) => const LoginOrSignUpScreen(),
+    ),
+
+    GoRoute(
+      path: '/login',
+      name: 'login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/signup',
+      name: 'signUp',
+      builder: (context, state) => const SignUpScreen(),
     ),
     GoRoute(
       path: '/home',
       name: 'homeScreen',
       builder: (context, state) => const HomeScreen(),
-    )
+    ),
   ],
 );

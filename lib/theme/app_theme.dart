@@ -57,7 +57,14 @@ class AppTheme {
         elevation: 0,
       ),
     ),
-
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        side: BorderSide(color: Colors.grey),
+        elevation: 0,
+      )
+    ),
     dividerColor: const Color(0xFFE5E5EA),
   );
 }

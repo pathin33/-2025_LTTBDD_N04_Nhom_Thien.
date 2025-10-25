@@ -37,6 +37,7 @@ dependencies:
   
   #package dung de dieu huong cac man hinh
   go_router: ^14.0.0
+  font_awesome_flutter: ^10.12.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
