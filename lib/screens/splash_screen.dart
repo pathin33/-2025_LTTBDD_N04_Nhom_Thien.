@@ -28,11 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("assets/images/LogoFlashNote.png", height: 200),
-            Text(
-              "Flash Note",
-              style: TextStyle(fontWeight: FontWeight.w700, fontSize: 35),
-            ),
+            Image.asset("assets/images/Logo.png", height: 220),
           ],
         ),
       ),

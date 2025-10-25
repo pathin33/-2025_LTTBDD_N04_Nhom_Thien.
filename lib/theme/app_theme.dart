@@ -7,7 +7,7 @@ class AppTheme {
     primaryColor: Colors.black,
     useMaterial3: true,
 
-    fontFamily: 'SFProDisplay',
+    fontFamily: 'Quicksand',
 
     colorScheme: const ColorScheme.light(
       primary: Colors.black,
@@ -40,12 +40,14 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: const Color(0xFFF2F2F7),
-      hintStyle: const TextStyle(color: Colors.grey),
+      hintStyle: const TextStyle(color: Colors.grey,fontFamily: 'Quicksand'),
+      labelStyle: const TextStyle(color: Colors.grey,fontFamily: 'Quicksand'),
       contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide.none,
       ),
+
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
@@ -55,6 +57,9 @@ class AppTheme {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         elevation: 0,
+        textStyle: TextStyle(
+          fontFamily: 'Quicksand'
+        )
       ),
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(

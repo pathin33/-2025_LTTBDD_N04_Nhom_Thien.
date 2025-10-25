@@ -29,10 +29,10 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset("assets/images/LogoFlashNote.png", height: 160),
+                  Image.asset("assets/images/Logo.png", height: 160),
                   const Text(
                     "Đăng kí hoặc đăng nhập",
-                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20),
+                    style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                   ////khoang cach chiem 5% ti le man hinh
@@ -82,6 +82,7 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                       ),
                     ),
                   ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Row(
                     children: [
                       const Expanded(
@@ -104,6 +105,7 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                       ),
                     ],
                   ),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   //duoi day la chuc nang dang nhap nhanh bang facebook,apple,google
                   Container(
                     child: Column(
