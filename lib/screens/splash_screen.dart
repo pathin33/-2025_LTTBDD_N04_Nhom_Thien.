@@ -16,7 +16,7 @@ class _SplashScreenState extends State<SplashScreen> {
     // Sau 4 giây sẽ tự chuyển sang màn hình Home
     Future.delayed(const Duration(seconds: 4), () {
       if (mounted) {
-        context.go('/loginorsignup');
+        context.go('/onboarding');
       }
     });
   }

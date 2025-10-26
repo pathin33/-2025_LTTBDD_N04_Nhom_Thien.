@@ -168,9 +168,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                       },
                       child: const Text("Đăng nhập"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                      ),
                     ),
                   ),
                 ],

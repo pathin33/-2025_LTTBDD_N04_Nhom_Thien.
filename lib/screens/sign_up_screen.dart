@@ -157,9 +157,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         }
                       },
                       child: const Text("Đăng ký"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                      ),
                     ),
                   ),
                 ],

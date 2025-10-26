@@ -77,9 +77,6 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                         }
                       },
                       child: const Text("Tiếp theo"),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                      ),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
@@ -123,7 +120,7 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Icon(FontAwesomeIcons.google),
+                                Image.asset("assets/icons/google.png",height: 40,),
                                 const SizedBox(width: 12),
                                 const Text(
                                   "Đăng nhập với Google",
@@ -179,7 +176,7 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                               mainAxisSize: MainAxisSize.min,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Icon(FontAwesomeIcons.facebook),
+                                Image.asset("assets/icons/facebook.png",height: 20,),
                                 const SizedBox(width: 12),
                                 const Text(
                                   "Đăng nhập với Facebook",
