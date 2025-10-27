@@ -1,4 +1,8 @@
+import 'package:btl_moblie/widgets/appbarhome_widget.dart';
+import 'package:btl_moblie/widgets/bottomnavigationbar_widget.dart';
+import 'package:btl_moblie/widgets/sildebar_widget.dart';
 import 'package:flutter/material.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -9,11 +13,11 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        "Home",
-        style: TextStyle(fontWeight: FontWeight.w700, fontSize: 30),
-      ),
+    return Scaffold(
+      appBar: AppbarhomeWidget(),
+      drawer: const SildebarWidget(),
+      body: Center(child: Text("Screen Home")),
+      bottomNavigationBar: const BottomnavigationbarWidget(),
     );
   }
 }

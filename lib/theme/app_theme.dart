@@ -25,7 +25,7 @@ class AppTheme {
       foregroundColor: Colors.black,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,fontFamily: 'Quicksand'),
       iconTheme: IconThemeData(color: Colors.black),
     ),
 

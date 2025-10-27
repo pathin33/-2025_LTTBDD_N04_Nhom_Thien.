@@ -1,0 +1,108 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class BottomnavigationbarWidget extends StatefulWidget {
+  const BottomnavigationbarWidget({super.key});
+
+  @override
+  State<BottomnavigationbarWidget> createState() =>
+      _BottomnavigationbarWidgetState();
+}
+
+class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
+  int _selectedIndex = 0;
+  //bien de luu so man hinh dang chon
+
+
+  Widget _buildIconWithBackground(IconData icon, int index) {
+    //ham de xu li khi nhan vao icon tren bottomnavigationbar
+    //no se thay doi icon sang dang fill
+    //va hien nen mau xung quang icon
+    bool isSelected = _selectedIndex == index;
+    //bien isSelected tra ve fasle neu selectedIndex  ko bang index neu bang thi la true
+    return AnimatedContainer(
+      //widget nay di container thong thuong vay nhung them 1 so hieu ung chuyen dong
+      //khi cac thuoc tinh thay doi
+      duration: Duration(milliseconds: 200),
+
+      curve: Curves.easeInOut,
+      //tao ra hieu ung chuyen dong sau 2 s 
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      decoration: BoxDecoration(
+        color: isSelected
+            ? Color(0xff2398C3).withOpacity(0.12)
+            : Colors.transparent,
+          //isSelected la true se co mau xanh bao quanh ko thi mau nhu mau nen
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Icon(
+        icon,
+        size: 26,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+      ),
+      child: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: Color(0xff2398C3),
+        unselectedItemColor: Colors.grey,
+        backgroundColor: Colors.white,
+        elevation: 0,
+        currentIndex: _selectedIndex,
+        onTap: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        showSelectedLabels: true,
+        showUnselectedLabels: false,
+        selectedFontSize: 12,
+        selectedLabelStyle: TextStyle(
+          fontWeight: FontWeight.w700,
+          height: 1.5,
+        ),
+        items: [
+          BottomNavigationBarItem(
+            label: 'Trang chủ',
+            icon: _buildIconWithBackground(
+              Icons.home_outlined,
+              0,
+            ),
+            activeIcon: _buildIconWithBackground(
+              Icons.home,
+              0,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Tạo mới',
+            icon: _buildIconWithBackground(
+              CupertinoIcons.add,
+              1,
+            ),
+            activeIcon: _buildIconWithBackground(
+              CupertinoIcons.add_circled_solid,
+              1,
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Tiến độ',
+            icon: _buildIconWithBackground(
+              CupertinoIcons.chart_bar,
+              2,
+            ),
+            activeIcon: _buildIconWithBackground(
+              CupertinoIcons.chart_bar_fill,
+              2,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
