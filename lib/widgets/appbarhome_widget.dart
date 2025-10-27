@@ -19,9 +19,9 @@ class AppbarhomeWidget extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(CupertinoIcons.search, size: 20),
+          icon: Icon(CupertinoIcons.search, size: 20,color: Colors.grey,),
         ),
-        IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.bell, size: 20)),
+        IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.bell_fill, size: 20,color: Colors.grey,)),
       ],
       leading: Builder(
         builder: (context) => GestureDetector(

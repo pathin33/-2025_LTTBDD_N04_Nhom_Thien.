@@ -71,7 +71,7 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
           BottomNavigationBarItem(
             label: 'Trang chủ',
             icon: _buildIconWithBackground(
-              Icons.home_outlined,
+              Icons.home,
               0,
             ),
             activeIcon: _buildIconWithBackground(
@@ -86,14 +86,14 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
               1,
             ),
             activeIcon: _buildIconWithBackground(
-              CupertinoIcons.add_circled_solid,
+              CupertinoIcons.add,
               1,
             ),
           ),
           BottomNavigationBarItem(
             label: 'Tiến độ',
             icon: _buildIconWithBackground(
-              CupertinoIcons.chart_bar,
+              CupertinoIcons.chart_bar_fill,
               2,
             ),
             activeIcon: _buildIconWithBackground(

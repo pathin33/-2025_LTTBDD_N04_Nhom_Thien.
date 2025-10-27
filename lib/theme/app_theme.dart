@@ -7,7 +7,7 @@ class AppTheme {
     primaryColor: Colors.black,
     useMaterial3: true,
 
-    fontFamily: 'Quicksand',
+    fontFamily: 'SFProDisplay',
 
     colorScheme: const ColorScheme.light(
       primary: Colors.black,
@@ -25,7 +25,7 @@ class AppTheme {
       foregroundColor: Colors.black,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,fontFamily: 'Quicksand'),
+      titleTextStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.w600,fontFamily: 'SFProDisplay'),
       iconTheme: IconThemeData(color: Colors.black),
     ),
 
@@ -40,8 +40,8 @@ class AppTheme {
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: const Color(0xFFF2F2F7),
-      hintStyle: const TextStyle(color: Colors.grey,fontFamily: 'Quicksand'),
-      labelStyle: const TextStyle(color: Colors.grey,fontFamily: 'Quicksand'),
+      hintStyle: const TextStyle(color: Colors.grey,fontFamily: 'SFProDisplay'),
+      labelStyle: const TextStyle(color: Colors.grey,fontFamily: 'SFProDisplay'),
       contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
@@ -58,7 +58,7 @@ class AppTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         elevation: 0,
         textStyle: TextStyle(
-          fontFamily: 'Quicksand'
+          fontFamily: 'SFProDisplay'
         )
       ),
     ),
