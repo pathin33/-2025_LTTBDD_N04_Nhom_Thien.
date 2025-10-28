@@ -1,16 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppbarhomeWidget extends StatelessWidget implements PreferredSizeWidget {
-  //khi muon dung appbar mk lam flutter yeu cau minh cho no chieu cao cu the cua appbar do
-  //the nen ta phai implements PreferredSizeWidget
+class AppbarhomeWidget extends StatelessWidget {
   const AppbarhomeWidget({super.key});
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight);//kToolbarHeight hang so mac dinh cua flutter tuong ung voi 56px
-  //tinh toan kich thuoc cua appbar
-  @override
   Widget build(BuildContext context) {
-    return AppBar(
+    return SliverAppBar(
+      //SliverAppBar giup toi uu linh hoat hon so voi appbar thong thuong 
+      //ho tro nhieu hieu ung hoat anh
+      floating: true,
+      //lam cho appbar noi len khi luot len
+      pinned: false,
+      //ko dinh o dau man hinh (an appbar khi luot xuong)
+      snap: true,
+      //bat len luon khi luot len an ngay khi luot xuong
       title: const Text(
         "flashnote",
         style: TextStyle(fontSize: 20, color: CupertinoColors.label),

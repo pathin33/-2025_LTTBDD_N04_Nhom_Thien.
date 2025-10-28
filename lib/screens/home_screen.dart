@@ -14,9 +14,64 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppbarhomeWidget(),
       drawer: const SildebarWidget(),
-      body: Center(child: Text("Screen Home")),
+      body: NestedScrollView(
+        //vi SliverAppBar la 1 sliver cuon dac biet chi hoat trong trong NestedScrollView
+        //len ta can NestedScrollView kem theo
+        headerSliverBuilder: (context, innerBoxIsScrolled) => [
+          const AppbarhomeWidget(),
+        ],
+        body: ListView(
+          children: [
+            Column(
+              children: [
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey),
+                  child: Text("Box1"),
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey),
+                  child: Text("Box2"),
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey),
+                  child: Text("Box3"),
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey),
+                  child: Text("Box4"),
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey),
+                  child: Text("Box5"),
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(color: Colors.grey),
+                  child: Text("Box6"),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: const BottomnavigationbarWidget(),
     );
   }
