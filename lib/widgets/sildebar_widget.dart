@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SildebarWidget extends StatelessWidget {
   const SildebarWidget({super.key});
@@ -261,7 +262,7 @@ class SildebarWidget extends StatelessWidget {
                       subtitle: "Thông tin về tác giả",
                       color: CupertinoColors.systemBlue,
                       onTap: () {
-                        
+                        context.push('/author');
                       },
                     ),
 

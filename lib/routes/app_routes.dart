@@ -1,3 +1,4 @@
+import 'package:btl_moblie/screens/author_screen.dart';
 import 'package:btl_moblie/screens/home_screen.dart';
 import 'package:btl_moblie/screens/login_or_signup_screen.dart';
 import 'package:btl_moblie/screens/login_screen.dart';
@@ -39,6 +40,11 @@ final GoRouter appRouter = GoRouter(
       path: '/home',
       name: 'homeScreen',
       builder: (context, state) => const HomeScreen(),
+    ),
+    GoRoute(
+      path: '/author',
+      name: 'author',
+      builder: (context, state) => const AuthorScreen(),
     ),
   ],
 );
