@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: const Text(
-                "Bộ sưu tập gần đây",
+                "Bộ thẻ ghi nhớ gần đây",
                 style: TextStyle(color: CupertinoColors.label, fontSize: 25),
               ),
             ),

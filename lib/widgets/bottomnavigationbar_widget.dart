@@ -76,7 +76,7 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
               context.go('/home');
               break;
             case 1:
-              context.go('/create');
+              context.push('/create');
               break;
             case 2:
               context.go('/achievement');
