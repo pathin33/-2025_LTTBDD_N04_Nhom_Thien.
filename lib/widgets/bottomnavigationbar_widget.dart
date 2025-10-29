@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BottomnavigationbarWidget extends StatefulWidget {
   const BottomnavigationbarWidget({super.key});
@@ -13,7 +14,6 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
   int _selectedIndex = 0;
   //bien de luu so man hinh dang chon
 
-
   Widget _buildIconWithBackground(IconData icon, int index) {
     //ham de xu li khi nhan vao icon tren bottomnavigationbar
     //no se thay doi icon sang dang fill
@@ -26,28 +26,23 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
       duration: Duration(milliseconds: 200),
 
       curve: Curves.easeInOut,
-      //tao ra hieu ung chuyen dong sau 2 s 
+      //tao ra hieu ung chuyen dong sau 2 s
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       decoration: BoxDecoration(
         color: isSelected
             ? Color(0xff2398C3).withOpacity(0.12)
             : Colors.transparent,
-          //isSelected la true se co mau xanh bao quanh ko thi mau nhu mau nen
+        //isSelected la true se co mau xanh bao quanh ko thi mau nhu mau nen
         borderRadius: BorderRadius.circular(12),
       ),
-      child: Icon(
-        icon,
-        size: 26,
-      ),
+      child: Icon(icon, size: 26),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-      ),
+      decoration: BoxDecoration(color: Colors.white),
       child: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         selectedItemColor: Color(0xff2398C3),
@@ -59,47 +54,39 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
           setState(() {
             _selectedIndex = index;
           });
+          //khi nhan vao cac icon o bottomnavigationbar dua vao chi so index dich chuyen
+          // den man hinh app tuong ung
+          switch (index) {
+            case 0:
+              context.go('/home');
+              break;
+            case 1:
+              context.go('/create');
+              break;
+            case 2:
+              context.go('/achievement');
+              break;
+          }
         },
         showSelectedLabels: true,
-        showUnselectedLabels: true,
+        showUnselectedLabels: false,
         selectedFontSize: 12,
-        selectedLabelStyle: TextStyle(
-          fontWeight: FontWeight.w700,
-          height: 1.5,
-        ),
+        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700, height: 1.5),
         items: [
           BottomNavigationBarItem(
             label: 'Trang chủ',
-            icon: _buildIconWithBackground(
-              Icons.home,
-              0,
-            ),
-            activeIcon: _buildIconWithBackground(
-              Icons.home,
-              0,
-            ),
+            icon: _buildIconWithBackground(Icons.home, 0),
+            activeIcon: _buildIconWithBackground(Icons.home, 0),
           ),
           BottomNavigationBarItem(
             label: 'Tạo mới',
-            icon: _buildIconWithBackground(
-              CupertinoIcons.add,
-              1,
-            ),
-            activeIcon: _buildIconWithBackground(
-              CupertinoIcons.add,
-              1,
-            ),
+            icon: _buildIconWithBackground(CupertinoIcons.add, 1),
+            activeIcon: _buildIconWithBackground(CupertinoIcons.add, 1),
           ),
           BottomNavigationBarItem(
-            label: 'Tiến độ',
-            icon: _buildIconWithBackground(
-              CupertinoIcons.chart_bar_fill,
-              2,
-            ),
-            activeIcon: _buildIconWithBackground(
-              CupertinoIcons.chart_bar_fill,
-              2,
-            ),
+            label: 'Thành tựu',
+            icon: _buildIconWithBackground(CupertinoIcons.star_fill, 2),
+            activeIcon: _buildIconWithBackground(CupertinoIcons.star_fill, 2),
           ),
         ],
       ),
