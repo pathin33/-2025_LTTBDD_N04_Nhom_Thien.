@@ -61,7 +61,7 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
           });
         },
         showSelectedLabels: true,
-        showUnselectedLabels: false,
+        showUnselectedLabels: true,
         selectedFontSize: 12,
         selectedLabelStyle: TextStyle(
           fontWeight: FontWeight.w700,

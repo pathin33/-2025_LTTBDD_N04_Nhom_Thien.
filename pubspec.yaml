@@ -84,7 +84,10 @@ flutter:
       fonts:
         - asset: assets/fonts/Quicksand-Bold.ttf
           weight: 700
+    - family: SFProDisplay
+      fonts:
         - asset: assets/fonts/SF-Pro-Display-Medium.otf
+          weight: 500
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

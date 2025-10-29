@@ -25,6 +25,7 @@ class AuthorScreen extends StatelessWidget {
     required String title,
     required String subtitle,
     required Color color,
+    
   }) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
