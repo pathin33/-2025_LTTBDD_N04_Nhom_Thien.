@@ -41,6 +41,21 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final GoRouterState state = GoRouterState.of(context);
+    //lay trang thai cua gorouter tu buildcontext
+    //tu do bien state se la 1 doi tuong chua thong tin cua router
+    final String location = state.matchedLocation;
+    //lay duong dan url tu doi tuong state
+    if (location.startsWith('/home')) {
+      //so sanh url co '/home' co trung ko de set gia tri cho bien _selectedIndex 
+      //de khi nhan icon o bottom no se dc higlight
+      //dua vao url de higlight icon tai bottom
+      _selectedIndex = 0;
+    } else if (location.startsWith('/create')) {
+      _selectedIndex = 1;
+    } else if (location.startsWith('/achievement')) {
+      _selectedIndex = 2;
+    }
     return Container(
       decoration: BoxDecoration(color: Colors.white),
       child: BottomNavigationBar(
