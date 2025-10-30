@@ -31,8 +31,9 @@ class SildebarWidget extends StatelessWidget {
       ),
     );
   }
+
   //ham, tao ra tieu de cac muc
-    Widget buildSectionTitle(String title) {
+  Widget buildSectionTitle(String title) {
     return Padding(
       padding: EdgeInsets.all(15),
       child: Text(
@@ -46,7 +47,8 @@ class SildebarWidget extends StatelessWidget {
       ),
     );
   }
-  //ham xay dung len cac de muc kem ,tieu de,icon,mo ta,chuc nang keo theo 
+
+  //ham xay dung len cac de muc kem ,tieu de,icon,mo ta,chuc nang keo theo
   Widget buildMenuItem({
     required IconData icon,
     //bieu tuong cua de muc
@@ -75,7 +77,7 @@ class SildebarWidget extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        //ListTile widget nay de hien thi 1 dong cua danh sach gom co icon ,title ,trailing 
+        //ListTile widget nay de hien thi 1 dong cua danh sach gom co icon ,title ,trailing
         onTap: onTap,
         //xu li khi nguoi dung nhan vao danh muc
         contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -109,7 +111,7 @@ class SildebarWidget extends StatelessWidget {
               color: CupertinoColors.systemGrey2,
               size: 20,
             ),
-            //neu ma ko truyen vao cho trailing se hien ra icon mui ten 
+        //neu ma ko truyen vao cho trailing se hien ra icon mui ten
       ),
     );
   }
@@ -180,7 +182,7 @@ class SildebarWidget extends StatelessWidget {
                 ),
               ),
 
-              // Cac danh muc 
+              // Cac danh muc
               Expanded(
                 child: ListView(
                   padding: EdgeInsets.symmetric(vertical: 16),
@@ -192,6 +194,7 @@ class SildebarWidget extends StatelessWidget {
                       subtitle: "Xem và chỉnh sửa hồ sơ",
                       color: Color(0xff2398C3),
                       onTap: () {
+                        context.push('/editprofile');
                       },
                     ),
                     buildMenuItem(
@@ -199,16 +202,7 @@ class SildebarWidget extends StatelessWidget {
                       title: "Thành tích",
                       subtitle: "Xem tiến độ của bạn",
                       color: CupertinoColors.systemYellow,
-                      onTap: () {
-                      },
-                    ),
-                    buildMenuItem(
-                      icon: CupertinoIcons.chart_bar_fill,
-                      title: "Thống kê",
-                      subtitle: "Theo dõi quá trình học",
-                      color: CupertinoColors.systemPurple,
-                      onTap: () {
-                      },
+                      onTap: () {},
                     ),
 
                     SizedBox(height: MediaQuery.of(context).size.height * 0.01),
@@ -218,8 +212,7 @@ class SildebarWidget extends StatelessWidget {
                       title: "Cài đặt",
                       subtitle: "tùy chỉnh ứng dụng",
                       color: CupertinoColors.systemGrey,
-                      onTap: () {
-                      },
+                      onTap: () {},
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.moon_fill,
@@ -229,23 +222,123 @@ class SildebarWidget extends StatelessWidget {
                       trailing: CupertinoSwitch(
                         //nut chuyen doi sang va toi
                         value: false,
-                        onChanged: (value) {
-                          
-                        },
+                        onChanged: (value) {},
                       ),
                       onTap: null,
                     ),
                     buildMenuItem(
-                      icon: CupertinoIcons.bell_fill,
-                      title: "Thông báo",
-                      subtitle: "Quản lý thông báo",
-                      color: CupertinoColors.systemRed,
+                      icon: CupertinoIcons.globe,
+                      title: "Ngôn ngữ",
+                      subtitle: "Chuyển đổi ngôn ngữ",
+                      color: CupertinoColors.systemTeal,
                       onTap: () {
-                        Navigator.pop(context);
-                        
+                        //man hinh ben duoi hien len de chuyen doi ngon ngu
+                        showModalBottomSheet(
+                          context: context,
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(
+                              top: Radius.circular(20),
+                            ),
+                          ),
+                          backgroundColor:
+                              CupertinoColors.systemGroupedBackground,
+                          builder: (context) {
+                            return Padding(
+                              padding: const EdgeInsets.all(16),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    width: 40,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                      color: CupertinoColors.systemGrey4,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 16),
+                                  const Text(
+                                    "Chọn ngôn ngữ",
+                                    style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height *
+                                        0.02,
+                                  ),
+                                  //Nut chon tieng viet
+                                  CupertinoButton(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 10,
+                                    ),
+                                    color: CupertinoColors.systemGrey5,
+                                    borderRadius: BorderRadius.circular(12),
+                                    onPressed: () {
+                                      context.pop();
+                                      //logic xu li o day
+                                    },
+                                    child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          CupertinoIcons.globe,
+                                          color: CupertinoColors.activeBlue,
+                                        ),
+                                        SizedBox(width: 8),
+                                        Text(
+                                          "Tiếng Việt",
+                                          style: TextStyle(
+                                            color: CupertinoColors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+
+                                  SizedBox(
+                                    height:
+                                        MediaQuery.of(context).size.height *
+                                        0.02,
+                                  ),
+                                  // nut chon ngon ngu tieng anh
+                                  CupertinoButton(
+                                    padding: const EdgeInsets.symmetric(
+                                      vertical: 10,
+                                    ),
+                                    color: CupertinoColors.systemGrey5,
+                                    borderRadius: BorderRadius.circular(12),
+                                    onPressed: () {
+                                      context.pop();
+                                    },
+                                    child: const Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Icon(
+                                          CupertinoIcons.globe,
+                                          color: CupertinoColors.activeBlue,
+                                        ),
+                                        SizedBox(width: 8),
+                                        Text(
+                                          "English",
+                                          style: TextStyle(
+                                            color: CupertinoColors.black,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
                       },
                     ),
-
                     SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                     buildSectionTitle("HỖ TRỢ"),
                     buildMenuItem(
@@ -253,8 +346,7 @@ class SildebarWidget extends StatelessWidget {
                       title: "Trợ giúp & Hỗ trợ",
                       subtitle: "Nhận trợ giúp",
                       color: CupertinoColors.systemGreen,
-                      onTap: () {
-                      },
+                      onTap: () {},
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.info_circle_fill,
@@ -272,7 +364,8 @@ class SildebarWidget extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 16),
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: CupertinoColors.systemRed.withOpacity(0.1)
+                          backgroundColor: CupertinoColors.systemRed
+                              .withOpacity(0.1),
                         ),
                         onPressed: () {
                           showLogoutDialog(context);
@@ -305,6 +398,4 @@ class SildebarWidget extends StatelessWidget {
       ),
     );
   }
-
-
 }

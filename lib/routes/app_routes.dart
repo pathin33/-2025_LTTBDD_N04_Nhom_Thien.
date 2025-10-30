@@ -1,6 +1,7 @@
 import 'package:btl_moblie/screens/achievement_screen.dart';
 import 'package:btl_moblie/screens/author_screen.dart';
 import 'package:btl_moblie/screens/create_flashcard_screen.dart';
+import 'package:btl_moblie/screens/edit_profile_screen.dart';
 import 'package:btl_moblie/screens/home_screen.dart';
 import 'package:btl_moblie/screens/login_or_signup_screen.dart';
 import 'package:btl_moblie/screens/login_screen.dart';
@@ -52,6 +53,11 @@ final GoRouter appRouter = GoRouter(
       path: '/achievement',
       name: 'achievement',
       builder: (context, state) => const AchievementScreen(),
+    ),
+    GoRoute(
+      path: '/editprofile',
+      name: 'editProfile',
+      builder: (context, state) => const EditProfileScreen(),
     ),
     GoRoute(
       path: '/author',
