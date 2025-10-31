@@ -1,9 +1,16 @@
+import 'package:btl_moblie/model/user_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class SildebarWidget extends StatelessWidget {
+class SildebarWidget extends StatefulWidget {
   const SildebarWidget({super.key});
+
+  @override
+  State<SildebarWidget> createState() => _SildebarWidgetState();
+}
+
+class _SildebarWidgetState extends State<SildebarWidget> {
   //ham show ra thong bao co muon dang xuat hay k
   void showLogoutDialog(BuildContext context) {
     showCupertinoDialog(
@@ -115,7 +122,6 @@ class SildebarWidget extends StatelessWidget {
       ),
     );
   }
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -154,7 +160,7 @@ class SildebarWidget extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(40),
                         child: Image.asset(
-                          "assets/images/avatar.jpeg",
+                          User.avatarPath,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -162,7 +168,7 @@ class SildebarWidget extends StatelessWidget {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                     // Tên user
                     Text(
-                      "Nguyen Ba Thien",
+                      User.name,
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -172,7 +178,7 @@ class SildebarWidget extends StatelessWidget {
                     SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                     // Email
                     Text(
-                      "pathin2k5@gmail.com",
+                      User.email,
                       style: TextStyle(
                         fontSize: 14,
                         color: CupertinoColors.secondaryLabel,
