@@ -3,6 +3,7 @@ import 'package:btl_moblie/widgets/bottomnavigationbar_widget.dart';
 import 'package:btl_moblie/widgets/sildebar_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -79,9 +80,9 @@ class _HomeScreenState extends State<HomeScreen> {
             buildDecks(
               context: context,
               title: "Ngữ Pháp Tiếng Anh",
-              numberCards: 25,
+              numberCards: 5,
               color: CupertinoColors.systemGreen,
-              progress: 75, // Tiến độ 1
+              progress: 100, // Tiến độ 1
             ),
             buildDecks(
               context: context,
@@ -127,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }) {
     return GestureDetector(
       onTap: () {
-        //xu li su kien nhan vao bo suu tap va chuyen sang man hinh flashcard
+        context.push('/flashcard');
       },
       child: Container(
         padding: EdgeInsets.all(16),
