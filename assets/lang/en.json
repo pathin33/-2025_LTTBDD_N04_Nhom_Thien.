@@ -1,0 +1,152 @@
+{
+    "onboarding": {
+        "title1": "Learn Easily",
+        "desc1": "Turn memorization into a fun game with FlashNote. Review quickly, effectively, and say goodbye to boring study sessions!",
+        "title2": "Create Your Own Flashcards",
+        "desc2": "Design flashcards in your own style. Add text, images, or examples to make learning more engaging and personal.",
+        "title3": "Track Your Learning Progress",
+        "desc3": "Review your learning history, mark mastered cards, and track your progress every day to stay motivated!"
+    },
+    "button": {
+        "getStarted": "Get Started"
+    },
+    "login_or_signup": {
+        "title": "Sign Up or Log In",
+        "email_label": "Email",
+        "email_empty": "Please enter your email",
+        "email_invalid": "Invalid email address",
+        "next": "Next",
+        "or": "or",
+        "login_google": "Sign in with Google",
+        "login_apple": "Sign in with Apple",
+        "login_facebook": "Sign in with Facebook"
+    },
+    "login": {
+        "welcome_back": "Welcome back!",
+        "password_label": "Password",
+        "password_empty": "Please enter your password",
+        "password_min_length": "Password must be at least 8 characters",
+        "otp_label": "OTP Code",
+        "otp_empty": "Please enter OTP code",
+        "login_button": "Log In",
+        "invalid_credentials": "Please re-enter password or OTP is incorrect!"
+    },
+    "signup": {
+        "title": "Create Account",
+        "subtitle": "Enter your information to start learning",
+        "name_label": "Full Name",
+        "name_empty": "Please enter your full name",
+        "password_label": "Password",
+        "password_empty": "Please enter password",
+        "password_min_length": "Password must be at least 8 characters",
+        "confirm_password_label": "Confirm Password",
+        "confirm_password_empty": "Please confirm password",
+        "password_mismatch": "Passwords do not match",
+        "signup_button": "Sign Up"
+    },
+    "create_flashcard": {
+        "appbar_title": "Create Flashcard Set",
+        "title_label": "Title",
+        "title_hint": "Topic, chapter, unit...",
+        "title_empty": "Please enter a title",
+        "cards_label": "Flashcards",
+        "term_label": "Term",
+        "definition_label": "Definition",
+        "success_message": "Flashcard set created successfully"
+    },
+    "achievement": {
+        "appbar_title": "Achievements",
+        "progress_title": "Completion Progress",
+        "completed": "completed",
+        "unlocked_section": "UNLOCKED",
+        "locked_section": "LOCKED",
+        "unlocked_on": "Unlocked on:",
+        "close": "Close",
+        "progress": "Progress",
+        "novice_title": "New Learner",
+        "novice_sub": "Complete your first study session",
+        "streak_title": "Streak Master",
+        "streak_sub": "Study 7 days in a row",
+        "diligent_title": "Diligent",
+        "diligent_sub": "Create 5 flashcard sets",
+        "star_title": "Star Collector",
+        "star_sub": "Get 100% on 5 sets",
+        "expert_title": "Expert",
+        "expert_sub": "Create 20 flashcard sets",
+        "speed_title": "Speedster",
+        "speed_sub": "Complete 100 flashcards in one day"
+    },
+    "home": {
+        "welcome_back": "Welcome back!",
+        "continue_learning": "Continue your learning journey",
+        "flashcards": "Flashcards",
+        "streak_days": "Day streak",
+        "recent_decks": "Recent Decks",
+        "cards": "cards"
+    },
+    "bottom_nav": {
+        "home": "Home",
+        "create": "Create",
+        "achievement": "Achievements"
+    },
+    "sidebar": {
+        "account_section": "ACCOUNT",
+        "customize_section": "CUSTOMIZE",
+        "support_section": "SUPPORT",
+        "profile": "Profile",
+        "edit_profile": "View and edit profile",
+        "achievements": "Achievements",
+        "view_progress": "View your progress",
+        "settings": "Settings",
+        "customize_app": "Customize the app",
+        "dark_mode": "Dark Mode",
+        "toggle_theme": "Switch theme",
+        "language": "Language",
+        "change_language": "Change language",
+        "select_language": "Select Language",
+        "vietnamese": "Vietnamese",
+        "english": "English",
+        "help_support": "Help & Support",
+        "get_help": "Get help",
+        "about": "About",
+        "author_info": "Author information",
+        "logout_title": "Logout",
+        "logout_confirm": "Are you sure you want to logout?",
+        "cancel": "Cancel",
+        "logout": "Logout"
+    },
+    "edit_profile": {
+        "username_label": "Username",
+        "name_required": "Please enter a new name",
+        "email_label": "Email",
+        "email_cannot_change_title": "Cannot change email",
+        "email_cannot_change_content": "Email is used for login and account verification, so it cannot be changed.",
+        "ok": "OK",
+        "change_password_label": "Change Password",
+        "current_password_hint": "Enter current password",
+        "current_password_required": "Please enter current password",
+        "new_password_hint": "Enter new password",
+        "new_password_required": "Please enter new password",
+        "confirm_password_hint": "Re-enter new password",
+        "confirm_password_required": "Please re-enter password",
+        "password_mismatch": "Passwords do not match",
+        "profile_updated": "Profile has been updated",
+        "save_changes": "Save Changes"
+    },
+    "author": {
+        "introduction_title": "Introduction",
+        "introduction_content": "Hello! I'm Bá Thiện, a member of the LTTBDD_N04_Nhom_Thien group in the Mobile Programming course, class N04. This FlashNote app was developed by me with the goal of providing effective and useful learning tools, helping users memorize knowledge quickly and easily.",
+        "group_info_section": "Group Information",
+        "group_name": "Group Name",
+        "member": "Member",
+        "contact_section": "Contact Information",
+        "github": "Github",
+        "email": "Email"
+    },
+    "flashcard": {
+        "tap_to_see_front": "Tap to see front",
+        "tap_to_see_back": "Tap to see back",
+        "term": "Term",
+        "definition": "Definition"
+    }
+}

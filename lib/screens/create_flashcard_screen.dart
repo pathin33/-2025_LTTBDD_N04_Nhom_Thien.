@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -54,7 +55,7 @@ class _CreateFlashcardScreenState extends State<CreateFlashcardScreen> {
                         direction: Axis.horizontal,
                         children: [
                           Padding(padding: const EdgeInsets.only(right: 12)),
-                          Text("Bộ thi thẻ ghi nhớ đã được tạo thành công"),
+                          Text(tr('create_flashcard.success_message')),
                         ],
                       ),
                     ),
@@ -67,7 +68,10 @@ class _CreateFlashcardScreenState extends State<CreateFlashcardScreen> {
           ),
         ],
         //tieu de cua appbar
-        title: Text("Tạo bộ thẻ ghi nhớ",style: TextStyle(fontSize: 20, color: CupertinoColors.label)),
+        title: Text(
+          tr('create_flashcard.appbar_title'),
+          style: TextStyle(fontSize: 20, color: CupertinoColors.label),
+        ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -78,16 +82,16 @@ class _CreateFlashcardScreenState extends State<CreateFlashcardScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Tiêu đề", style: TextStyle(fontSize: 16)),
+                  Text(tr('create_flashcard.title_label'), style: TextStyle(fontSize: 16)),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   TextFormField(
                     controller: _titleController,
                     decoration: InputDecoration(
-                      labelText: 'Chủ đề,chương,đơn vị...',
+                      labelText: tr('create_flashcard.title_hint'),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập tiêu đề';
+                        return tr('create_flashcard.title_empty');
                       }
                       return null;
                     },
@@ -96,8 +100,8 @@ class _CreateFlashcardScreenState extends State<CreateFlashcardScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Các thẻ ghi nhớ", style: TextStyle(fontSize: 16)),
-                      Text("${arrInputCard.length}",style: TextStyle(fontSize: 16))
+                      Text(tr('create_flashcard.cards_label'), style: TextStyle(fontSize: 16)),
+                      Text("${arrInputCard.length}", style: TextStyle(fontSize: 16))
                       //hien thi so the ghi nho
                     ],
                   ),
@@ -137,11 +141,12 @@ class _CreateFlashcardScreenState extends State<CreateFlashcardScreen> {
       ),
     );
   }
+
   //ham tra ve giao dien cho cac o nhap cua flashcard
   Container buildFlashCard(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(5),
-      margin: EdgeInsets.symmetric(horizontal: 0,vertical: 5),
+      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
@@ -158,9 +163,13 @@ class _CreateFlashcardScreenState extends State<CreateFlashcardScreen> {
       ),
       child: Column(
         children: [
-          TextFormField(decoration: InputDecoration(labelText: 'Thuật ngữ')),
+          TextFormField(
+            decoration: InputDecoration(labelText: tr('create_flashcard.term_label')),
+          ),
           SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-          TextField(decoration: InputDecoration(labelText: 'Định nghĩa')),
+          TextField(
+            decoration: InputDecoration(labelText: tr('create_flashcard.definition_label')),
+          ),
         ],
       ),
     );

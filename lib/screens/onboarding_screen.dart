@@ -1,6 +1,7 @@
 import 'package:btl_moblie/widgets/onboarding_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -30,21 +31,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   });
                 },
                 //neu so trang thay doi cap nhat cho bien indexPage
-                children: const [
+                children: [
                   OnboardingPage(
                     image: "assets/images/OnboardingPageImg1.png",
-                    title: "Học tập dễ dàng",
-                    description: "Biến việc ghi nhớ thành trò chơi thú vị với FlashNote. Ôn tập nhanh, hiệu quả và không còn cảm giác nhàm chán khi học nữa!",
+                    title: tr('onboarding.title1'),
+                    description: tr('onboarding.desc1'),
                   ),
                   OnboardingPage(
                     image: "assets/images/OnboardingPageImg2.png",
-                    title: "Tạo Flashcard riêng",
-                    description: "Tự do thiết kế thẻ ghi nhớ theo phong cách của bạn. Thêm nội dung, hình ảnh hoặc ví dụ để việc học trở nên sinh động và gần gũi hơn.",
+                    title: tr('onboarding.title2'),
+                    description: tr('onboarding.desc2'),
                   ),
                   OnboardingPage(
                     image: "assets/images/OnboardingPageImg3.png",
-                    title: "Theo dõi tiến trình học",
-                    description: "Xem lại lịch sử học tập, đánh dấu thẻ đã thuộc và theo dõi mức độ tiến bộ của bạn mỗi ngày để luôn có động lực học tiếp!",
+                    title: tr('onboarding.title3'),
+                    description: tr('onboarding.desc3'),
                   ),
                 ],
               ),
@@ -79,7 +80,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPressed: () {
                   context.go('/loginorsignup');
                 },
-                child: Text("Bắt đầu ngay"),
+                child: Text(tr('button.getStarted')),
               ),
             ),
           ],

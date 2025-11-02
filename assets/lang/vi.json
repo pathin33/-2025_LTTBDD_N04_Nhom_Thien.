@@ -1,0 +1,152 @@
+{
+    "onboarding": {
+        "title1": "Học tập dễ dàng",
+        "desc1": "Biến việc ghi nhớ thành trò chơi thú vị với FlashNote. Ôn tập nhanh, hiệu quả và không còn cảm giác nhàm chán khi học nữa!",
+        "title2": "Tạo Flashcard riêng",
+        "desc2": "Tự do thiết kế thẻ ghi nhớ theo phong cách của bạn. Thêm nội dung, hình ảnh hoặc ví dụ để việc học trở nên sinh động và gần gũi hơn.",
+        "title3": "Theo dõi tiến trình học",
+        "desc3": "Xem lại lịch sử học tập, đánh dấu thẻ đã thuộc và theo dõi mức độ tiến bộ của bạn mỗi ngày để luôn có động lực học tiếp!"
+    },
+    "button": {
+        "getStarted": "Bắt đầu ngay"
+    },
+    "login_or_signup": {
+        "title": "Đăng ký hoặc đăng nhập",
+        "email_label": "Email",
+        "email_empty": "Vui lòng nhập email",
+        "email_invalid": "Email không hợp lệ",
+        "next": "Tiếp theo",
+        "or": "hoặc",
+        "login_google": "Đăng nhập với Google",
+        "login_apple": "Đăng nhập với Apple",
+        "login_facebook": "Đăng nhập với Facebook"
+    },
+    "login": {
+        "welcome_back": "Chào mừng trở lại!",
+        "password_label": "Mật khẩu",
+        "password_empty": "Vui lòng nhập mật khẩu",
+        "password_min_length": "Mật khẩu phải lớn hơn hoặc bằng 8 kí tự",
+        "otp_label": "Mã OTP",
+        "otp_empty": "Vui lòng nhập mã OTP",
+        "login_button": "Đăng nhập",
+        "invalid_credentials": "Vui lòng nhập lại mật khẩu hoặc mã otp không đúng !"
+    },
+    "signup": {
+        "title": "Tạo tài khoản",
+        "subtitle": "Hãy nhập thông tin để bắt đầu học tập",
+        "name_label": "Họ và tên",
+        "name_empty": "Vui lòng nhập họ và tên",
+        "password_label": "Mật khẩu",
+        "password_empty": "Vui lòng nhập mật khẩu",
+        "password_min_length": "Mật khẩu phải lớn hơn hoặc bằng 8 kí tự",
+        "confirm_password_label": "Nhập lại mật khẩu",
+        "confirm_password_empty": "Vui lòng nhập mật khẩu",
+        "password_mismatch": "Mật khẩu không trùng khớp",
+        "signup_button": "Đăng ký"
+    },
+    "create_flashcard": {
+        "appbar_title": "Tạo bộ thẻ ghi nhớ",
+        "title_label": "Tiêu đề",
+        "title_hint": "Chủ đề,chương,đơn vị...",
+        "title_empty": "Vui lòng nhập tiêu đề",
+        "cards_label": "Các thẻ ghi nhớ",
+        "term_label": "Thuật ngữ",
+        "definition_label": "Định nghĩa",
+        "success_message": "Bộ thi thẻ ghi nhớ đã được tạo thành công"
+    },
+    "achievement": {
+        "appbar_title": "Thành tựu",
+        "progress_title": "Tiến độ hoàn thành",
+        "completed": "hoàn thành",
+        "unlocked_section": "ĐÃ MỞ KHÓA",
+        "locked_section": "CHƯA MỞ KHÓA",
+        "unlocked_on": "Đã mở khóa:",
+        "close": "Đóng",
+        "progress": "Tiến độ",
+        "novice_title": "Tân học viên",
+        "novice_sub": "Hoàn thành buổi học đầu tiên",
+        "streak_title": "Chuyển cần",
+        "streak_sub": "Học 7 ngày liên tiếp",
+        "diligent_title": "Chăm học",
+        "diligent_sub": "Tạo được 5 bộ thẻ",
+        "star_title": "Nhiều sao",
+        "star_sub": "Đạt 100% trong 5 bộ thẻ",
+        "expert_title": "Chuyên gia",
+        "expert_sub": "Tạo 20 bộ thẻ",
+        "speed_title": "Thần tốc",
+        "speed_sub": "hoàn thành 100 flashcard trong 1 ngày"
+    },
+    "home": {
+        "welcome_back": "Chào mừng đã trở lại!",
+        "continue_learning": "Tiếp tục hành trình học tập của bạn",
+        "flashcards": "Thẻ ghi nhớ",
+        "streak_days": "Chuỗi ngày liên tiếp",
+        "recent_decks": "Bộ thẻ ghi nhớ gần đây",
+        "cards": "thẻ"
+    },
+    "bottom_nav": {
+        "home": "Trang chủ",
+        "create": "Tạo mới",
+        "achievement": "Thành tựu"
+    },
+    "sidebar": {
+        "account_section": "TÀI KHOẢN",
+        "customize_section": "TÙY CHỈNH",
+        "support_section": "HỖ TRỢ",
+        "profile": "Hồ sơ",
+        "edit_profile": "Xem và chỉnh sửa hồ sơ",
+        "achievements": "Thành tích",
+        "view_progress": "Xem tiến độ của bạn",
+        "settings": "Cài đặt",
+        "customize_app": "tùy chỉnh ứng dụng",
+        "dark_mode": "Chế độ tối",
+        "toggle_theme": "Chuyển đổi giao diện",
+        "language": "Ngôn ngữ",
+        "change_language": "Chuyển đổi ngôn ngữ",
+        "select_language": "Chọn ngôn ngữ",
+        "vietnamese": "Tiếng Việt",
+        "english": "English",
+        "help_support": "Trợ giúp & Hỗ trợ",
+        "get_help": "Nhận trợ giúp",
+        "about": "Giới thiệu",
+        "author_info": "Thông tin về tác giả",
+        "logout_title": "Đăng xuất",
+        "logout_confirm": "Bạn có chắc chắn muốn đăng xuất không?",
+        "cancel": "Hủy",
+        "logout": "Đăng xuất"
+    },
+    "edit_profile": {
+        "username_label": "Tên đăng nhập",
+        "name_required": "Vui lòng nhập tên thay đổi",
+        "email_label": "Email",
+        "email_cannot_change_title": "Không thể thay đổi email",
+        "email_cannot_change_content": "Email được dùng để đăng nhập và xác thực tài khoản, nên không thể thay đổi.",
+        "ok": "OK",
+        "change_password_label": "Thay đổi mật khẩu",
+        "current_password_hint": "Nhập mật khẩu hiện tại",
+        "current_password_required": "Vui lòng nhập mật khẩu hiện tại",
+        "new_password_hint": "Nhập mật khẩu mới",
+        "new_password_required": "Vui lòng nhập mật khẩu mới",
+        "confirm_password_hint": "Nhập lại mật khẩu mới",
+        "confirm_password_required": "Vui lòng nhập lại mật khẩu",
+        "password_mismatch": "Mật khẩu không khớp",
+        "profile_updated": "Hồ sơ đã được cập nhật",
+        "save_changes": "Lưu thay đổi"
+    },
+    "author": {
+        "introduction_title": "Giới thiệu",
+        "introduction_content": "Xin chào! Mình Bá Thiện thành viên nhóm LTTBDD_N04_Nhom_Thien thuộc học phần lập trình thiết bị di động lớp N04. Ứng dụng FlashNote này do mình phát triển với mong muốn mang lại nhiều công cụ học tập hiệu quả hữu ích, giúp cho người dùng ghi nhớ kiến thức nhanh và dễ dàng hơn.",
+        "group_info_section": "Thông tin nhóm",
+        "group_name": "Tên nhóm",
+        "member": "Thành viên",
+        "contact_section": "Thông tin liên hệ",
+        "github": "Github",
+        "email": "Email"
+    },
+    "flashcard": {
+        "tap_to_see_front": "Nhấn để xem mặt trước",
+        "tap_to_see_back": "Nhấn để xem mặt sau",
+        "term": "Thuật ngữ",
+        "definition": "Định nghĩa"
+    }
+}

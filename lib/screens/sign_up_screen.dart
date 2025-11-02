@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -45,13 +46,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset("assets/images/Logo.png", height: 160),
-                  const Text(
-                    "Tạo tài khoản",
+                  Text(
+                    tr('signup.title'),
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
-                  const Text(
-                    "Hãy nhập thông tin để bắt đầu học tập",
+                  Text(
+                    tr('signup.subtitle'),
                     style: TextStyle(fontSize: 18),
                   ),
 
@@ -60,10 +61,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _nameController,
                     //an password
-                    decoration: InputDecoration(labelText: 'Họ và tên'),
+                    decoration: InputDecoration(labelText: tr('signup.name_label')),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập họ và tên';
+                        return tr('signup.name_empty');
                       }
                       return null;
                     },
@@ -77,7 +78,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                     //an password
                     decoration: InputDecoration(
-                      labelText: 'Mật khẩu',
+                      labelText: tr('signup.password_label'),
                       suffixIcon: IconButton(
                         icon: Icon(
                           ishiddenps ? Icons.visibility_off : Icons.visibility,
@@ -93,10 +94,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập mật khẩu';
+                        return tr('signup.password_empty');
                       }
                       if (value.length < 8) {
-                        return 'Mật khẩu phải lớn hơn hoặc bằng 8 kí tự';
+                        return tr('signup.password_min_length');
                       }
 
                       return null;
@@ -111,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                     //an password
                     decoration: InputDecoration(
-                      labelText: 'Nhập lại mật khẩu',
+                      labelText: tr('signup.confirm_password_label'),
                       suffixIcon: IconButton(
                         icon: Icon(
                           ishiddencps ? Icons.visibility_off : Icons.visibility,
@@ -126,11 +127,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập mật khẩu';
+                        return tr('signup.confirm_password_empty');
                       }
-                      final password  = _passwordController.text.trim();
+                      final password = _passwordController.text.trim();
                       if (!(value == password)) {
-                        return 'Mật khẩu không trùng khớp';
+                        return tr('signup.password_mismatch');
                       }
 
                       return null;
@@ -156,7 +157,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           });
                         }
                       },
-                      child: const Text("Đăng ký"),
+                      child: Text(tr('signup.signup_button')),
                     ),
                   ),
                 ],

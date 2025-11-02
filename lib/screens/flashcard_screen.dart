@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class FlashcardScreen extends StatefulWidget {
@@ -208,7 +209,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
                   Text(
-                    flipped ? 'Nhấn để xem mặt trước' : 'Nhấn để xem mặt sau',
+                    flipped
+                        ? tr('flashcard.tap_to_see_front')
+                        : tr('flashcard.tap_to_see_back'),
                     //neu the da lat r thi hien ra 'Nhấn để xem mặt trước' neu ch lat thi hien ra 'Nhấn để xem mặt sau'
                     style: TextStyle(
                       color: CupertinoColors.secondaryLabel,
@@ -311,7 +314,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
-                      isBack ? 'Định nghĩa' : 'Thuật ngữ',
+                      isBack
+                          ? tr('flashcard.definition')
+                          : tr('flashcard.term'),
                       style: TextStyle(
                         color: color,
                         fontSize: 14,

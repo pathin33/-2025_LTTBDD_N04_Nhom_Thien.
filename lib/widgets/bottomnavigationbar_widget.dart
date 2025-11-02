@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -89,17 +90,17 @@ class _BottomnavigationbarWidgetState extends State<BottomnavigationbarWidget> {
         selectedLabelStyle: TextStyle(fontWeight: FontWeight.w700, height: 1.5),
         items: [
           BottomNavigationBarItem(
-            label: 'Trang chủ',
+            label: tr('bottom_nav.home'),
             icon: _buildIconWithBackground(Icons.home, 0),
             activeIcon: _buildIconWithBackground(Icons.home, 0),
           ),
           BottomNavigationBarItem(
-            label: 'Tạo mới',
+            label: tr('bottom_nav.create'),
             icon: _buildIconWithBackground(CupertinoIcons.add, 1),
             activeIcon: _buildIconWithBackground(CupertinoIcons.add, 1),
           ),
           BottomNavigationBarItem(
-            label: 'Thành tựu',
+            label: tr('bottom_nav.achievement'),
             icon: _buildIconWithBackground(CupertinoIcons.star_fill, 2),
             activeIcon: _buildIconWithBackground(CupertinoIcons.star_fill, 2),
           ),

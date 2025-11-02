@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
@@ -43,8 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset("assets/images/Logo.png", height: 160),
-                  const Text(
-                    "Chào mừng trở lại!",
+                  Text(
+                    tr('login.welcome_back'),
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.05),
@@ -55,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     //an password
                     
                     decoration: InputDecoration(
-                      labelText: 'Mật khẩu',
+                      labelText: tr('login.password_label'),
                       suffixIcon: IconButton(
                         icon: Icon(
                           ishidden ? Icons.visibility_off : Icons.visibility
@@ -70,10 +71,10 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập mật khẩu';
+                        return tr('login.password_empty');
                       }
                       if (value.length < 8) {
-                        return 'Mật khẩu phải lớn hơn hoặc bằng 8 kí tự';
+                        return tr('login.password_min_length');
                       }
 
                       return null;
@@ -97,7 +98,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     decoration: InputDecoration(
-                      labelText: 'Mã OTP',
+                      labelText: tr('login.otp_label'),
                       counterText: "",
                       //an bo dem so
                       
@@ -110,7 +111,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     },
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập mã OTP';
+                        return tr('login.otp_empty');
                       }
                       return null;
                     },
@@ -157,7 +158,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                         padding: const EdgeInsets.only(right: 12),
 
                                       ),
-                                      Text("Vui lòng nhập lại mật khẩu hoặc mã otp không đúng !")
+                                      Text(tr('login.invalid_credentials'))
                                     ],
                                   ),
                                 ),
@@ -167,7 +168,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           }
                         }
                       },
-                      child: const Text("Đăng nhập"),
+                      child: Text(tr('login.login_button')),
                     ),
                   ),
                 ],

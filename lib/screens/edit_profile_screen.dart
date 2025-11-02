@@ -1,4 +1,5 @@
 import 'package:btl_moblie/model/user_model.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +17,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final _PasswordController = TextEditingController();
   final _newPasswordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +71,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             key: _formKey,
             child: Column(
               children: [
-                buildTitle(title: "Tên đăng nhập"),
+                buildTitle(title: tr('edit_profile.username_label')),
                 //o nhap ten dang nhap
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 22, vertical: 5),
@@ -82,13 +84,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập tên thay đổi';
+                        return tr('edit_profile.name_required');
                       }
                       return null;
                     },
                   ),
                 ),
-                buildTitle(title: "Email"),
+                buildTitle(title: tr('edit_profile.email_label')),
                 //o hien email
                 GestureDetector(
                   onTap: () {
@@ -96,13 +98,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     showCupertinoDialog(
                       context: context,
                       builder: (context) => CupertinoAlertDialog(
-                        title: const Text("Không thể thay đổi email"),
-                        content: const Text(
-                          "Email được dùng để đăng nhập và xác thực tài khoản, nên không thể thay đổi.",
-                        ),
+                        title: Text(tr('edit_profile.email_cannot_change_title')),
+                        content: Text(tr('edit_profile.email_cannot_change_content')),
                         actions: [
                           CupertinoDialogAction(
-                            child: const Text("OK"),
+                            child: Text(tr('edit_profile.ok')),
                             onPressed: () => context.pop(),
                           ),
                         ],
@@ -121,7 +121,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     ),
                   ),
                 ),
-                buildTitle(title: "Thay đổi mật khẩu"),
+                buildTitle(title: tr('edit_profile.change_password_label')),
                 //o nhap mat khau cu
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 22, vertical: 5),
@@ -129,13 +129,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     controller: _PasswordController,
                     obscureText: true,
                     decoration: InputDecoration(
-                      hintText: "Nhập mật khẩu hiện tại",
+                      hintText: tr('edit_profile.current_password_hint'),
                       filled: true,
                       fillColor: Colors.white,
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập mật khẩu hiện tại';
+                        return tr('edit_profile.current_password_required');
                       }
                       return null;
                     },
@@ -148,13 +148,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     controller: _newPasswordController,
                     obscureText: true,
                     decoration: InputDecoration(
-                      hintText: "Nhập mật khẩu mới",
+                      hintText: tr('edit_profile.new_password_hint'),
                       filled: true,
                       fillColor: Colors.white,
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập mật khẩu mới';
+                        return tr('edit_profile.new_password_required');
                       }
                       return null;
                     },
@@ -167,16 +167,16 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     controller: _confirmPasswordController,
                     obscureText: true,
                     decoration: InputDecoration(
-                      hintText: "Nhập lại mật khẩu mới",
+                      hintText: tr('edit_profile.confirm_password_hint'),
                       filled: true,
                       fillColor: Colors.white,
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập lại mật khẩu';
+                        return tr('edit_profile.confirm_password_required');
                       }
                       if (value != _newPasswordController.text) {
-                        return 'Mật khẩu không khớp';
+                        return tr('edit_profile.password_mismatch');
                       }
                       return null;
                     },
@@ -194,13 +194,10 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         showCupertinoDialog(
                           context: context,
                           builder: (context) => CupertinoAlertDialog(
-                            title: const Text("Hồ sơ đã được cập nhật"),
-                            // content: const Text(
-                            //   "Email được dùng để đăng nhập và xác thực tài khoản, nên không thể thay đổi.",
-                            // ),
+                            title: Text(tr('edit_profile.profile_updated')),
                             actions: [
                               CupertinoDialogAction(
-                                child: const Text("OK"),
+                                child: Text(tr('edit_profile.ok')),
                                 onPressed: () => context.pop(),
                               ),
                             ],
@@ -208,7 +205,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         );
                       }
                     },
-                    child: Text("Lưu thay đổi"),
+                    child: Text(tr('edit_profile.save_changes')),
                   ),
                 ),
               ],
@@ -218,6 +215,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       ),
     );
   }
+
   //ham tra ve giao dien cua title co o nhap
   Container buildTitle({required String title}) {
     return Container(

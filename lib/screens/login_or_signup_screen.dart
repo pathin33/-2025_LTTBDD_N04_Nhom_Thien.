@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -30,21 +31,21 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset("assets/images/Logo.png", height: 160),
-                  const Text(
-                    "Đăng kí hoặc đăng nhập",
+                  Text(
+                    tr('login_or_signup.title'),
                     style: TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                   ////khoang cach chiem 5% ti le man hinh
                   TextFormField(
                     controller: _emailController,
-                    decoration: InputDecoration(labelText: 'Email'),
+                    decoration: InputDecoration(labelText: tr('login_or_signup.email_label')),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Vui lòng nhập email';
+                        return tr('login_or_signup.email_empty');
                       }
                       if (!value.contains('@')) {
-                        return 'Email không hợp lệ';
+                        return tr('login_or_signup.email_invalid');
                       }
 
                       return null;
@@ -76,7 +77,7 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                           });
                         }
                       },
-                      child: const Text("Tiếp theo"),
+                      child: Text(tr('login_or_signup.next')),
                     ),
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.01),
@@ -89,8 +90,8 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                           endIndent: 10,
                         ),
                       ),
-                      const Text(
-                        "hoặc",
+                      Text(
+                        tr('login_or_signup.or'),
                         style: TextStyle(color: Colors.grey, fontSize: 14),
                       ),
                       const Expanded(
@@ -122,8 +123,8 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                               children: [
                                 Image.asset("assets/icons/google.png",height: 40,),
                                 const SizedBox(width: 12),
-                                const Text(
-                                  "Đăng nhập với Google",
+                                Text(
+                                  tr('login_or_signup.login_google'),
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
@@ -150,8 +151,8 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                               children: [
                                 const Icon(FontAwesomeIcons.apple, size: 23),
                                 const SizedBox(width: 12),
-                                const Text(
-                                  "Đăng nhập với Apple",
+                                Text(
+                                  tr('login_or_signup.login_apple'),
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,
@@ -178,8 +179,8 @@ class _LoginOrSignUpScreenState extends State<LoginOrSignUpScreen> {
                               children: [
                                 Image.asset("assets/icons/facebook.png",height: 20,),
                                 const SizedBox(width: 12),
-                                const Text(
-                                  "Đăng nhập với Facebook",
+                                Text(
+                                  tr('login_or_signup.login_facebook'),
                                   style: TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.w700,

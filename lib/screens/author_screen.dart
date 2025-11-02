@@ -1,14 +1,16 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class AuthorScreen extends StatelessWidget {
   const AuthorScreen({super.key});
+
   Widget buildTitle(String title) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 0),
       child: Text(
-        title,
+        tr(title),
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w600,
@@ -25,7 +27,6 @@ class AuthorScreen extends StatelessWidget {
     required String title,
     required String subtitle,
     required Color color,
-    
   }) {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -58,7 +59,7 @@ class AuthorScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  tr(title),
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -114,7 +115,7 @@ class AuthorScreen extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Giới thiệu",
+                  tr('author.introduction_title'),
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.w600,
@@ -122,35 +123,36 @@ class AuthorScreen extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                 Text(
-                  "Xin chào! Mình Bá Thiện thành viên nhóm LTTBDD_N04_Nhom_Thien thuộc học phần lập trình thiết bị di động lớp N04 . Ứng dụng FlashNote này do mình phát triển với mong muốn mang lại nhiều công cụ học tập hiệu quả hữu ích, giúp cho người dùng ghi nhớ kiến thức nhanh và dễ dàng hơn.",
+                  tr('author.introduction_content'),
                 ),
               ],
             ),
           ),
-          buildTitle("Thông tin nhóm"),
+          buildTitle('author.group_info_section'),
           buildContactInfo(
             icon: CupertinoIcons.collections_solid,
-            title: "Tên nhóm",
+            title: 'author.group_name',
             subtitle: "2025_LTTBDD_N04_Nhom_Thien",
             color: Color(0xff2398C3),
           ),
           buildContactInfo(
             icon: CupertinoIcons.group,
-            title: "Thành viên",
+            title: 'author.member',
             subtitle: "Nguyễn Bá Thiện - 23010704",
             color: Color(0xff2398C3),
           ),
-          buildTitle("Thông tin liên hệ"),
+          buildTitle('author.contact_section'),
           buildContactInfo(
             icon: CupertinoIcons.globe,
-            title: "Github",
+            title: 'author.github',
             subtitle: "pathin33",
             color: Color(0xff2398C3),
           ),
           buildContactInfo(
             icon: CupertinoIcons.mail,
-            title: "Email",
+            title: 'author.email',
             subtitle: "bathien2k5@gmail.com",
             color: Color(0xff2398C3),
           ),

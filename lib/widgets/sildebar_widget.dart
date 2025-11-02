@@ -1,4 +1,5 @@
 import 'package:btl_moblie/model/user_model.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,18 +17,18 @@ class _SildebarWidgetState extends State<SildebarWidget> {
     showCupertinoDialog(
       context: context,
       builder: (context) => CupertinoAlertDialog(
-        title: Text("Logout"),
-        content: Text("Are you sure you want to logout?"),
+        title: Text(tr('sidebar.logout_title')),
+        content: Text(tr('sidebar.logout_confirm')),
         actions: [
           CupertinoDialogAction(
-            child: Text("Cancel"),
+            child: Text(tr('sidebar.cancel')),
             onPressed: () {
               Navigator.pop(context);
             },
           ),
           CupertinoDialogAction(
             isDestructiveAction: true,
-            child: Text("Logout"),
+            child: Text(tr('sidebar.logout')),
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
@@ -44,7 +45,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
     return Padding(
       padding: EdgeInsets.all(15),
       child: Text(
-        title,
+        tr(title), // Dùng tr() cho section title
         style: TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w600,
@@ -100,7 +101,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
           child: Icon(icon, color: color, size: 22),
         ),
         title: Text(
-          title,
+          tr(title),
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
@@ -108,7 +109,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
           ),
         ),
         subtitle: Text(
-          subtitle,
+          tr(subtitle),
           style: TextStyle(fontSize: 13, color: CupertinoColors.secondaryLabel),
         ),
         trailing:
@@ -122,6 +123,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -159,10 +161,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                       ),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(40),
-                        child: Image.asset(
-                          User.avatarPath,
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.asset(User.avatarPath, fit: BoxFit.cover),
                       ),
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.02),
@@ -193,11 +192,11 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                 child: ListView(
                   padding: EdgeInsets.symmetric(vertical: 16),
                   children: [
-                    buildSectionTitle("TÀI KHOẢN"),
+                    buildSectionTitle('sidebar.account_section'),
                     buildMenuItem(
                       icon: CupertinoIcons.person_circle,
-                      title: "Hồ sơ",
-                      subtitle: "Xem và chỉnh sửa hồ sơ",
+                      title: 'sidebar.profile',
+                      subtitle: 'sidebar.edit_profile',
                       color: Color(0xff2398C3),
                       onTap: () {
                         context.push('/editprofile');
@@ -205,25 +204,25 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.star_fill,
-                      title: "Thành tích",
-                      subtitle: "Xem tiến độ của bạn",
+                      title: 'sidebar.achievements',
+                      subtitle: 'sidebar.view_progress',
                       color: CupertinoColors.systemYellow,
                       onTap: () {},
                     ),
 
                     SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-                    buildSectionTitle("TÙY CHỈNH"),
+                    buildSectionTitle('sidebar.customize_section'),
                     buildMenuItem(
                       icon: CupertinoIcons.settings,
-                      title: "Cài đặt",
-                      subtitle: "tùy chỉnh ứng dụng",
+                      title: 'sidebar.settings',
+                      subtitle: 'sidebar.customize_app',
                       color: CupertinoColors.systemGrey,
                       onTap: () {},
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.moon_fill,
-                      title: "Chế độ tối",
-                      subtitle: "Chuyển đổi giao diện",
+                      title: 'sidebar.dark_mode',
+                      subtitle: 'sidebar.toggle_theme',
                       color: CupertinoColors.systemIndigo,
                       trailing: CupertinoSwitch(
                         //nut chuyen doi sang va toi
@@ -234,8 +233,8 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.globe,
-                      title: "Ngôn ngữ",
-                      subtitle: "Chuyển đổi ngôn ngữ",
+                      title: 'sidebar.language',
+                      subtitle: 'sidebar.change_language',
                       color: CupertinoColors.systemTeal,
                       onTap: () {
                         //man hinh ben duoi hien len de chuyen doi ngon ngu
@@ -263,8 +262,8 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                                     ),
                                   ),
                                   const SizedBox(height: 16),
-                                  const Text(
-                                    "Chọn ngôn ngữ",
+                                  Text(
+                                    tr('sidebar.select_language'),
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold,
@@ -282,11 +281,14 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                                     ),
                                     color: CupertinoColors.systemGrey5,
                                     borderRadius: BorderRadius.circular(12),
-                                    onPressed: () {
+                                    onPressed: () async {
+                                      await context.setLocale(
+                                        const Locale('vi'),
+                                      );
+                                      //chuyen doi ngon ngu sang tieng viet
                                       context.pop();
-                                      //logic xu li o day
                                     },
-                                    child: const Row(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -296,7 +298,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                                         ),
                                         SizedBox(width: 8),
                                         Text(
-                                          "Tiếng Việt",
+                                          tr('sidebar.vietnamese'),
                                           style: TextStyle(
                                             color: CupertinoColors.black,
                                           ),
@@ -317,10 +319,14 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                                     ),
                                     color: CupertinoColors.systemGrey5,
                                     borderRadius: BorderRadius.circular(12),
-                                    onPressed: () {
+                                    onPressed: () async {
+                                      await context.setLocale(
+                                        const Locale('en'),
+                                      );
+                                      //chuyen doi ngon ngu sang tieng anh
                                       context.pop();
                                     },
-                                    child: const Row(
+                                    child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
@@ -330,7 +336,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                                         ),
                                         SizedBox(width: 8),
                                         Text(
-                                          "English",
+                                          tr('sidebar.english'),
                                           style: TextStyle(
                                             color: CupertinoColors.black,
                                           ),
@@ -346,18 +352,18 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                       },
                     ),
                     SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-                    buildSectionTitle("HỖ TRỢ"),
+                    buildSectionTitle('sidebar.support_section'),
                     buildMenuItem(
                       icon: CupertinoIcons.question_circle_fill,
-                      title: "Trợ giúp & Hỗ trợ",
-                      subtitle: "Nhận trợ giúp",
+                      title: 'sidebar.help_support',
+                      subtitle: 'sidebar.get_help',
                       color: CupertinoColors.systemGreen,
                       onTap: () {},
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.info_circle_fill,
-                      title: "Giới thiệu",
-                      subtitle: "Thông tin về tác giả",
+                      title: 'sidebar.about',
+                      subtitle: 'sidebar.author_info',
                       color: CupertinoColors.systemBlue,
                       onTap: () {
                         context.push('/author');
@@ -384,7 +390,7 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                               width: MediaQuery.of(context).size.height * 0.01,
                             ),
                             Text(
-                              "Đăng xuất",
+                              tr('sidebar.logout'),
                               style: TextStyle(
                                 color: CupertinoColors.systemRed,
                                 fontWeight: FontWeight.w600,

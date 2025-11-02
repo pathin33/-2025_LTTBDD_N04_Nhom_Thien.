@@ -1,6 +1,7 @@
 import 'package:btl_moblie/widgets/appbarhome_widget.dart';
 import 'package:btl_moblie/widgets/bottomnavigationbar_widget.dart';
 import 'package:btl_moblie/widgets/sildebar_widget.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -31,15 +32,15 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Chào mừng đã trở lại!",
+                  Text(
+                    tr('home.welcome_back'),
                     style: TextStyle(
                       color: CupertinoColors.label,
                       fontSize: 25,
                     ),
                   ),
-                  const Text(
-                    "Tiếp tục hành trình học tập của bạn",
+                  Text(
+                    tr('home.continue_learning'),
                     style: TextStyle(
                       color: CupertinoColors.secondaryLabel,
                       fontSize: 16,
@@ -55,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: buildCardStatistics(
                     icon: CupertinoIcons.doc_text,
                     number: "24",
-                    sub: "Thẻ ghi nhớ",
+                    sub: tr('home.flashcards'),
                     bgColor: CupertinoColors.systemBlue.withOpacity(0.1),
                   ),
                 ),
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: buildCardStatistics(
                     icon: CupertinoIcons.flame,
                     number: "7",
-                    sub: "Chuỗi ngày liên tiếp",
+                    sub: tr('home.streak_days'),
                     bgColor: CupertinoColors.systemOrange.withOpacity(0.1),
                   ),
                 ),
@@ -71,8 +72,8 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-              child: const Text(
-                "Bộ thẻ ghi nhớ gần đây",
+              child: Text(
+                tr('home.recent_decks'),
                 style: TextStyle(color: CupertinoColors.label, fontSize: 25),
               ),
             ),
@@ -82,7 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: "Ngữ Pháp Tiếng Anh",
               numberCards: 5,
               color: CupertinoColors.systemGreen,
-              progress: 100, // Tiến độ 1
+              progress: 100, 
             ),
             buildDecks(
               context: context,
@@ -103,7 +104,7 @@ class _HomeScreenState extends State<HomeScreen> {
               title: "Hóa Học Hữu Cơ",
               numberCards: 120,
               color: CupertinoColors.systemPurple,
-              progress: 99, // Tiến độ 4
+              progress: 99,
             ),
             buildDecks(
               context: context,
@@ -118,6 +119,7 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: const BottomnavigationbarWidget(),
     );
   }
+
   //ham tra ve 1 container hien thi ten bo suu tap, so the ghi nho, tien do hoan thanh
   Widget buildDecks({
     required BuildContext context,
@@ -169,7 +171,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title,
+                    title, 
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w600,
@@ -177,7 +179,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   Text(
-                    "${numberCards} thẻ",
+                    "${numberCards} ${tr('home.cards')}",
                     style: TextStyle(
                       fontSize: 14,
                       color: CupertinoColors.secondaryLabel,
@@ -202,6 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
+
   //ham tra ve 1 container de thong ke(so the ghi nho,chuoi ngay dang nhap)
   Container buildCardStatistics({
     required String number,
