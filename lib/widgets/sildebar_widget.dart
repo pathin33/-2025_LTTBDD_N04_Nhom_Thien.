@@ -23,15 +23,14 @@ class _SildebarWidgetState extends State<SildebarWidget> {
           CupertinoDialogAction(
             child: Text(tr('sidebar.cancel')),
             onPressed: () {
-              Navigator.pop(context);
+              context.pop();
             },
           ),
           CupertinoDialogAction(
             isDestructiveAction: true,
             child: Text(tr('sidebar.logout')),
             onPressed: () {
-              Navigator.pop(context);
-              Navigator.pop(context);
+              context.go('/loginorsignup');
               // Perform logout
             },
           ),
