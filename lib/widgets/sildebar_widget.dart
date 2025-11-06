@@ -357,7 +357,9 @@ class _SildebarWidgetState extends State<SildebarWidget> {
                       title: 'sidebar.help_support',
                       subtitle: 'sidebar.get_help',
                       color: CupertinoColors.systemGreen,
-                      onTap: () {},
+                      onTap: () {
+                        context.push('/help');
+                      },
                     ),
                     buildMenuItem(
                       icon: CupertinoIcons.info_circle_fill,

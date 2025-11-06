@@ -148,5 +148,22 @@
         "tap_to_see_back": "Nhấn để xem mặt sau",
         "term": "Thuật ngữ",
         "definition": "Định nghĩa"
+    },
+    "help": {
+        "title": "Trợ giúp & Hỗ trợ",
+        "usage_guide_section": "Hướng dẫn sử dụng",
+        "create_deck": "Cách tạo bộ thẻ mới",
+        "create_deck_desc": "Nhấn nút ➕ ở màn hình chính để thêm bộ thẻ mới, sau đó nhập tên và thêm các thẻ nhớ.",
+        "study_cards": "Cách học thẻ",
+        "study_cards_desc": "Mở bộ thẻ → nhấn vào thẻ để xem mặt sau và nhấn lần nữa để xem mặt trước, nhấn < để quay lại thẻ, nhấn > để chuyển sang thẻ tiếp theo.",
+        "track_progress": "Theo dõi tiến trình học",
+        "track_progress_desc": "App sẽ hiển thị tiến trình hoàn thành ở mỗi bộ thẻ để bạn biết mình đã học bao nhiêu phần trăm.",
+        "contact_feedback_section": "Liên hệ & Phản hồi",
+        "send_feedback": "Gửi phản hồi",
+        "send_feedback_desc": "Nếu bạn gặp lỗi hoặc có góp ý, hãy gửi email cho nhóm phát triển qua: pathin2k5@gmail.com",
+        "email_coming_soon": "Chức năng gửi email sắp ra mắt",
+        "about_app": "Về ứng dụng",
+        "version": "Phiên bản 1.0.0",
+        "thank_you": "Cảm ơn bạn đã sử dụng FlashNote"
     }
 }

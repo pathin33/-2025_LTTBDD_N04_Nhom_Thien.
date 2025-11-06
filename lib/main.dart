@@ -26,6 +26,7 @@ class MyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      key: ValueKey(context.locale.languageCode),//rebuild lai toan bo khi chuyen doi ngon ngu
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       localizationsDelegates: context.localizationDelegates,

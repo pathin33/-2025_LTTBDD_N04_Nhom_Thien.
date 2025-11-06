@@ -148,5 +148,22 @@
         "tap_to_see_back": "Tap to see back",
         "term": "Term",
         "definition": "Definition"
+    },
+    "help": {
+        "title": "Help & Support",
+        "usage_guide_section": "Usage Guide",
+        "create_deck": "How to create a new deck",
+        "create_deck_desc": "Tap the ➕ button on the home screen to add a new deck, then enter the name and add flashcards.",
+        "study_cards": "How to study flashcards",
+        "study_cards_desc": "Open a deck → tap a card to see the back, tap again to see the front. Use < to go back, > to go forward.",
+        "track_progress": "Track your learning progress",
+        "track_progress_desc": "The app shows completion progress for each deck so you know how much you've learned.",
+        "contact_feedback_section": "Contact & Feedback",
+        "send_feedback": "Send feedback",
+        "send_feedback_desc": "If you encounter bugs or have suggestions, email the team at: pathin2k5@gmail.com",
+        "email_coming_soon": "Email feature coming soon",
+        "about_app": "About the app",
+        "version": "Version 1.0.0",
+        "thank_you": "Thank you for using FlashNote"
     }
 }
